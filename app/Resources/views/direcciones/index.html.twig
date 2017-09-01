@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Direcciones list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Calle</th>
+                <th>Colonia</th>
+                <th>Delegacion</th>
+                <th>Numero</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for direccione in direcciones %}
+            <tr>
+                <td><a href="{{ path('direcciones_show', { 'id': direccione.id }) }}">{{ direccione.id }}</a></td>
+                <td>{{ direccione.calle }}</td>
+                <td>{{ direccione.colonia }}</td>
+                <td>{{ direccione.delegacion }}</td>
+                <td>{{ direccione.numero }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('direcciones_show', { 'id': direccione.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('direcciones_edit', { 'id': direccione.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('direcciones_new') }}">Create a new direccione</a>
+        </li>
+    </ul>
+{% endblock %}
