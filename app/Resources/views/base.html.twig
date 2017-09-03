@@ -3,11 +3,40 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('public/css/materialize.min.css')}}">
+
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Crud</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Domicilios</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Domicilios</a></li>
+          </ul>
+        </div>
+      </nav>
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="{{asset('public/js/materialize.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('public/js/init.js')}}">
+
+        </script>
+
+        {% block javascripts %}
+
+        {% endblock %}
     </body>
 </html>
