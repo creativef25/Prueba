@@ -14,6 +14,7 @@ class UsuarioController extends Controller
 {
     /**
      * Lists all usuario entities.
+     *@Route("/" name="Usuario")
      *
      */
     public function indexAction()
